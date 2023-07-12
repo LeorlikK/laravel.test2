@@ -7,9 +7,7 @@ use App\Http\Requests\Admin\Post\PostSearchRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\Builder;
 
 class PostService
 {
