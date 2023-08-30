@@ -81,7 +81,7 @@ Route::namespace('\App\Http\Controllers\Admin')->prefix('admin')->middleware(['v
         Route::get('/create', Posts\PostCreateGetController::class)->name('admin.posts.create');
         Route::post('/create', Posts\PostCreatePostController::class)->name('admin.posts.store');
         Route::get('/update/{item}/{page}', Posts\PostUpdateGetController::class)->name('admin.posts.edit');
-        Route::patch('/update/{patch}/{page}', Posts\PostUpdatePostController::class)->name('admin.posts.update');
+        Route::patch('/update/{patch}/{page?}', Posts\PostUpdatePostController::class)->name('admin.posts.update');
         Route::delete('/delete/{delete}', Posts\PostDeleteController::class)->name('admin.posts.destroy');
 
         Route::get('/like', [PostLikeController::class, 'index'])->name('admin.posts.like.index');

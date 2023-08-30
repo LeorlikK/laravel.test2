@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Posts\ApiPostController;
 use App\Http\Controllers\VueJS\VueJsAxiosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,10 @@ use Illuminate\Support\Facades\Route;
 //VUE - JS
 Route::resource('/vue-js-axios', VueJsAxiosController::class);
 //Route::post('/vue-js-axios', VueJsAxiosController::class);
+Route::prefix('post')->group(function (){
+    Route::get('/', [ApiPostController::class, 'index']);
+    Route::post('/create', [ApiPostController::class, 'create']);
+    Route::get('/read/{post}', [ApiPostController::class, 'read']);
+    Route::patch('/update/{patch}', [ApiPostController::class, 'update']);
+    Route::delete('/delete/{post}', [ApiPostController::class, 'delete']);
+});

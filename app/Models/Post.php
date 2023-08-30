@@ -46,6 +46,21 @@ class Post extends Model
         return Carbon::parse($this->created_at);
     }
 
+    public function scopeStatusAvailable($query)
+    {
+        return $query->where('status', 'available');
+    }
+
+    public function getDataFullStringAttribute(): string
+    {
+        $string = "";
+        foreach ($this->data as $key => $value) {
+            $string .= "$key: $value";
+            if ($key !== array_key_last($this->data)) $string .= '; ';
+        }
+        return $string;
+    }
+
     protected $withCount = ['userLikes', 'category'];
 //    protected $with = ['category', 'userLikes', 'post_comment'];
 
