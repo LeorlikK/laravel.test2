@@ -14,6 +14,6 @@ class ExampleTest extends TestCase
      */
     public function test_all_check()
     {
-        $this->assertTrue(true);
+        $a = 1;
     }
 }
