@@ -14,6 +14,6 @@ class ExampleTest extends TestCase
      */
     public function test_all_check()
     {
-        $a = 2;
+        $a = 1;
     }
 }
